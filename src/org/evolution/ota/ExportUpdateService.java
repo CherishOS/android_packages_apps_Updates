@@ -79,6 +79,7 @@ public class ExportUpdateService extends Service {
             File source = (File) intent.getSerializableExtra(EXTRA_SOURCE_FILE);
             File destination = (File) intent.getSerializableExtra(EXTRA_DEST_FILE);
             startExporting(source, destination);
+			Toast.makeText(this, R.string.toast_export_started, Toast.LENGTH_SHORT).show();
         } else if (ACTION_STOP_EXPORTING.equals(intent.getAction())) {
             if (mIsExporting) {
                 mExportThread.interrupt();
